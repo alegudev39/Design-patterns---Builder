@@ -24,8 +24,29 @@ public class PersonBuilder {
         return this;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public PersonBuilder(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
     public Person build() {
-        return new Person(firstName, lastName, age, address);
+        return new Person(this);
     }
 
     @Override
