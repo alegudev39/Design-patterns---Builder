@@ -5,14 +5,15 @@
 public class Main {
     public static void main(String[] args) {
 
-        Person person1 = new Person("Luigi", "Gigino", 30, "Piazza Vittorio, 1");
+        Person person1 = new Person(Person.builder("Luca","Rossi"));
+        Person person2 = new Person(Person.builder("Gigi","Verdi"));
+        person2.setFirstName("Gigino");
+        person2.setAddress("Piazza Martiri");
+
 
         System.out.println("person1" + person1);
+        System.out.println("person2" + person2);
 
-        PersonBuilder person2 = new PersonBuilder();
-        person2.setFirstName("Antonio");
-        person2.setLastName("Antonino");
 
-        System.out.println("personBuilder" + person2);
     }
 }

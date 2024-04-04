@@ -9,11 +9,11 @@ public class Person {
         return firstName;
     }
 
-    public void setFirstName(java.lang.String firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    public java.lang.String getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
@@ -29,11 +29,11 @@ public class Person {
         this.age = age;
     }
 
-    public java.lang.String getAddress() {
+    public String getAddress() {
         return address;
     }
 
-    public void setAddress(java.lang.String address) {
+    public void setAddress(String address) {
         this.address = address;
     }
 
@@ -47,10 +47,13 @@ public class Person {
                 '}';
     }
 
-    public Person(String firstName, String lastName, int age, String address) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.address = address;
+    protected Person(PersonBuilder builder) {
+        this.firstName = builder.getFirstName();
+        this.lastName = builder.getLastName();
+        this.age = builder.getAge();
+        this.address = builder.getAddress();
+    }
+    public static PersonBuilder builder(String firstName, String lastName){
+        return new PersonBuilder(firstName, lastName);
     }
 }
